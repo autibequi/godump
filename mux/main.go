@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"log"
+	"math/rand"
 	"net/http"
+	"strconv"
 )
 
 // Book Struct (Model)
@@ -43,6 +45,15 @@ func getBook(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(&Book{})
 }
+
+// Create Book
+func createBook(w http.ResponseWriter, r *http.Request) {
+	var book Book
+	_ = json.NewDecoder(r.Body).Decode(&book)
+	book.ID = strconv.Itoa(rand.Intn(100000)) // Stupid id generation
+	books = append(books, book)
+	json.NewEncoder(w).Encode(book)
+}
 func main() {
 	// Init Router
 	r := mux.NewRouter()
@@ -54,6 +65,7 @@ func main() {
 	// Router Handlers/Endpoints
 	r.HandleFunc("/api/books", getBooks).Methods("GET")
 	r.HandleFunc("/api/books/{id}", getBook).Methods("GET")
+	r.HandleFunc("/api/books", createBook).Methods("POST")
 
 	// Start Server
 	log.Fatal(http.ListenAndServe(":8080", r))
