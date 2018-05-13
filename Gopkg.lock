@@ -2,6 +2,18 @@
 
 
 [[projects]]
+  name = "github.com/gorilla/context"
+  packages = ["."]
+  revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
+  version = "v1.1"
+
+[[projects]]
+  name = "github.com/gorilla/mux"
+  packages = ["."]
+  revision = "e3702bed27f0d39777b0b37b664b6280e8ef8fbf"
+  version = "v1.6.2"
+
+[[projects]]
   name = "github.com/julienschmidt/httprouter"
   packages = ["."]
   revision = "8c199fb6259ffc1af525cc3ad52ee60ba8359669"
@@ -10,6 +22,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "59de32be4f2bbe73f4cedb526c7cc61b1ece6defba7c75990dfbffa4656282ea"
+  inputs-digest = "52f899b54e264e8faad61fc45a54f12a6a9fa21602be0d414dafdb13c984f8c5"
   solver-name = "gps-cdcl"
   solver-version = 1
