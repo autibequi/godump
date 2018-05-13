@@ -30,6 +30,19 @@ func getBooks(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(books)
 }
 
+// Get One Book
+func getBook(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r) // Get Params
+	// Loop Through books
+	for _, item := range books {
+		if item.ID == params["id"] {
+			json.NewEncoder(w).Encode(item)
+			return
+		}
+	}
+	json.NewEncoder(w).Encode(&Book{})
+}
 func main() {
 	// Init Router
 	r := mux.NewRouter()
@@ -40,6 +53,7 @@ func main() {
 
 	// Router Handlers/Endpoints
 	r.HandleFunc("/api/books", getBooks).Methods("GET")
+	r.HandleFunc("/api/books/{id}", getBook).Methods("GET")
 
 	// Start Server
 	log.Fatal(http.ListenAndServe(":8080", r))
