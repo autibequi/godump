@@ -49,3 +49,7 @@ This will install a binary on `$GOPATH/bin` so make sure it's in your `$PATH`.
 After install `dep` you must run `dep ensure` inside the repository folder to install all dependencies.
 
 After that just run any go code directly
+
+## Adding a new dependencies
+
+After using a new dependencies you must run `dep ensure` to add the new dependencies to `gopkg` files.
