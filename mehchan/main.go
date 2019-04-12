@@ -48,10 +48,10 @@ func pong(ctx iris.Context) {
 	id := res.InsertedID
 
 	ctx.JSON(iris.Map{
-		"id":    id,
-		"board": board,
+		"id":     id,
+		"board":  board,
 		"thread": thread,
-		"post":  post,
+		"post":   post,
 	})
 }
 
