@@ -1,20 +1,4 @@
 {
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true,
-        "rename": true,
-        "goToDefinition": true,
-        "hover": true,
-        "signatureHelp": true,
-        "goToTypeDefinition": true,
-        "goToImplementation": true,
-        "documentSymbols": true,
-        "workspaceSymbols": true,
-        "findReferences": true,
-        "diagnostics": false
-    },
-    "go.formatTool": "goimports",
-    "go.inferGopath": false,
     "workbench.colorCustomizations": {
         "activityBar.background": "#5294b9",
         "activityBar.foreground": "#15202b",

@@ -9,7 +9,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func getDatabaseClient() {
+// GetDatabaseClient creates a client to be used to save/get things
+func GetDatabaseClient() *mongo.Database {
 	// Set client options
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 

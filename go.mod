@@ -1,6 +1,6 @@
 module github.com/pedroorez/godump
 
-go 1.12
+go 1.13
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
@@ -25,7 +25,7 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
-	github.com/mongodb/mongo-go-driver v1.0.0
+	github.com/mongodb/mongo-go-driver v1.1.1
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/stretchr/testify v1.4.0 // indirect
