@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/kataras/iris"
 	"github.com/pedroorez/godump/mehchan/boards"
+
+	"github.com/kataras/iris/v12"
 )
 
 func main() {
