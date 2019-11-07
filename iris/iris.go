@@ -3,9 +3,12 @@ package main
 import (
 	"context"
 	"time"
-        // "labix.org/v2/mgo/bson"
-	"github.com/kataras/iris"
-        "github.com/pedroorez/godump/mongo"
+
+	// "labix.org/v2/mgo/bson"
+
+	"github.com/kataras/iris/v12"
+	"github.com/pedroorez/godump/mongo"
+	"gopkg.in/mgo.v2/bson"
 )
 
 var client = mongo.GetMongoClient()
@@ -23,7 +26,6 @@ func list(ctx iris.Context) {
 	texto := ctx.Params().Get("texto")
 	ctx.JSON(iris.Map{"message": texto})
 }
-
 
 func main() {
 	app := iris.Default()

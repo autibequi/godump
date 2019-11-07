@@ -5,16 +5,16 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
 	"github.com/julienschmidt/httprouter"
 )
-
 
 var (
 	addr = flag.String("addr", ":8080", "http service address")
 	data map[string]string
 )
 
-func main(){
+func main() {
 	flag.Parse()
 	data = map[string]string{}
 
@@ -30,7 +30,7 @@ func main(){
 	}
 }
 
-func show(w http.ResponseWriter, r *http.Request, p httprouter.Params){
+func show(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	k := p.ByName("key")
 	if k == "" {
 		fmt.Fprintf(w, "read list: %v", data)
@@ -39,7 +39,7 @@ func show(w http.ResponseWriter, r *http.Request, p httprouter.Params){
 	fmt.Fprintf(w, "Read entry: data[%s] = %s", k, data[k])
 }
 
-func update(w http.ResponseWriter, r *http.Request, p httprouter.Params){
+func update(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	k := p.ByName("key")
 	v := p.ByName("value")
 
